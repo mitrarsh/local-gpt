@@ -1,0 +1,145 @@
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("");
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: #4F1960;
+  --clr-gray-1: #EFF1F7;
+  --clr-gray-2: #E3E3E3;
+  --clr-heading: #3F3D4B;
+  --clr-text: #474747;
+  --clr-input-placeholder: #C5C6CF;
+  
+  --ff-primary: 
+  --ff-secondary: ;
+  --radius: 2rem;
+  --transition: all 0.3s linear;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+html {
+  font-size: 62.5%;
+}
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* font-family: ; */
+  /* background: ; */
+  color: var(--clr-text);
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+input{
+    outline: none;
+}
+button{
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: ;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: var(--ff-primary);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+.chatbox{
+  position: relative;
+}
+.input{
+    background-color: var(--clr-gray-1);
+    border-radius: var(--radius);
+    padding: 2rem;
+    position: fixed;
+     bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+  
+}
+.msg{
+  padding: 2rem;
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  margin-top: 2rem;
+  width: fit-content;
+}
+.chatgptMsg{
+
+}
+.humanMsg{
+  background-color: var(--clr-gray-1);
+  align-self: end;
+}
+.messagesBox{
+  display: flex;
+  flex-direction: column;
+}
+/* section */
