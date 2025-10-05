@@ -1,11 +1,13 @@
 import { useState } from "react";
 import UseChatStore from "../../store/chatStore";
+import { useNavigate } from "react-router-dom";
 
 const Input = () => {
   const [input, setInput] = useState("");
   const addMessage = UseChatStore((state) => state.addMessage);
   const activeChatId = UseChatStore((state) => state.activeChatId);
   const addChat = UseChatStore((state) => state.addChat);
+  const navigate=useNavigate()
 
 
   const responses = [
@@ -21,10 +23,14 @@ const Input = () => {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!input.trim()) return;
+
     let chatId = activeChatId;
+
     if (!chatId) {
       addChat(`Chat ${new Date().toLocaleTimeString()}`);
       chatId = UseChatStore.getState().activeChatId;
+
+      navigate(`/chat/${chatId}`)
     }
 
     const humanMsgId = Date.now();

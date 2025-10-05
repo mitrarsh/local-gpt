@@ -21,7 +21,7 @@ type ChatStore = {
   chats: Chat[];
   activeChatId: number | null;
   addMessage: (msg: Message) => void;
-  setActiveChat: (id: number) => void;
+  setActiveChat: (id: number|null) => void;
   addChat: (title?: string) => void;
   deleteChat: (id: number) => void;
   // clearChats: () => void;
