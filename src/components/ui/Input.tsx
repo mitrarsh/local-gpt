@@ -4,7 +4,9 @@ import UseChatStore from "../../store/chatStore";
 const Input = () => {
   const [input, setInput] = useState("");
   const addMessage = UseChatStore((state) => state.addMessage);
-  const chatHistory = UseChatStore((state) => state.chatHistory);
+  const activeChatId = UseChatStore((state) => state.activeChatId);
+  const addChat = UseChatStore((state) => state.addChat);
+
 
   const responses = [
     "That's interesting! Tell me more.",
@@ -19,6 +21,12 @@ const Input = () => {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!input.trim()) return;
+    let chatId = activeChatId;
+    if (!chatId) {
+      addChat(`Chat ${new Date().toLocaleTimeString()}`);
+      chatId = UseChatStore.getState().activeChatId;
+    }
+
     const humanMsgId = Date.now();
     addMessage({
       id: humanMsgId,
@@ -27,6 +35,7 @@ const Input = () => {
       user: "human",
     });
     setInput("");
+
     setTimeout(() => {
       const randomResponse =
         responses[Math.floor(Math.random() * responses.length)];
@@ -39,7 +48,7 @@ const Input = () => {
       });
     }, 800);
   }
-  console.log(chatHistory);
+
   return (
     <form className="input flex" onSubmit={handleSubmit}>
       <input

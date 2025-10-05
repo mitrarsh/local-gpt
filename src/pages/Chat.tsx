@@ -1,8 +1,13 @@
-import React from 'react'
+
+import { useParams } from 'react-router-dom';
+import Chatbox from '../components/ui/Chatbox';
 
 const Chat = () => {
+    const { id } = useParams<{ id: string }>();
   return (
-    <div>Chat</div>
+    <div className=' flex-1'>
+      <Chatbox/>
+    </div>
   )
 }
 

@@ -64,7 +64,7 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: ;
+  /* text-transform: ; */
   line-height: 1.25;
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
@@ -163,4 +163,8 @@ background-color: aqua;
 .sidebar{
   padding: 2rem;
   border: 1px solid var(--clr-gray-2);
+  width: 15%;
+}
+.activeChatPreview{
+  background-color: var(--clr-gray-1);
 }
