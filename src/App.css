@@ -66,7 +66,6 @@ h4 {
   letter-spacing: var(--spacing);
   /* text-transform: ; */
   line-height: 1.25;
-  margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
 }
 h1 {
@@ -111,6 +110,7 @@ p {
 .mt-8{
   margin-top: 2rem;
 }
+.p-4{padding: 1rem;}
 /*  global classes */
 .chatbox{
   display: flex;
@@ -126,8 +126,8 @@ p {
     background-color: var(--clr-gray-1);
     border-radius: var(--radius);
     padding: 2rem;
-      width: clamp(50rem, 90vw, 80%);
-      align-self: center;
+    width: clamp(50rem, 90vw, 80%);
+    align-self: center;
 }
 .messagesBox{
   flex: 1;
@@ -161,10 +161,31 @@ background-color: aqua;
 /* section */
 
 .sidebar{
-  padding: 2rem;
+  padding: 2rem 0 2rem 2rem;
   border: 1px solid var(--clr-gray-2);
   width: 15%;
+  height: 100vh;
 }
 .activeChatPreview{
   background-color: var(--clr-gray-1);
+}
+.chats-list-container {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* ensures other layout parts don’t scroll */
+}
+
+.chats-list {
+  flex: 1; /* allows it to grow and take available space */
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto; /* enables scrolling only inside this */
+  scroll-behavior: smooth;
+  justify-content: start;
+}
+
+/* chatbox */
+.start-text{
+margin-top: 25%;
 }

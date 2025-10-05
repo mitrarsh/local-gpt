@@ -12,7 +12,7 @@ const Chatbox = () => {
     return (
       <div className="chatbox">
         <MessagesBox>
-          <h1 className="self-center ">Where should we begin?</h1>
+          <h1 className="self-center align-self-center start-text">Where should we begin?</h1>
         </MessagesBox>
         <Input />
       </div>

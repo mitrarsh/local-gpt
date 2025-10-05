@@ -8,8 +8,8 @@ const ChatsList = () => {
   const setActiveChat=UseChatStore((s)=>s.setActiveChat)
 
   return (
-    <div>
-      <ul>
+    <div className="h-full chats-list-container">
+      <ul className="flex flex-col chats-list">
         {chats.map((chat) => (
           <Link to={`chat/${chat.id}`}
           onClick={()=>setActiveChat(chat.id)}
@@ -18,6 +18,7 @@ const ChatsList = () => {
               title={chat.title}
               preview={chat.preview}
               className={`${activeChatId === chat.id ? "activeChatPreview" : ""}`}
+              id={chat.id}
             />
           </Link>
         ))}

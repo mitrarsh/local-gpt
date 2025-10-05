@@ -1,18 +1,23 @@
+import UseChatStore from "../../store/chatStore";
 
+type ChatPreviewProps = {
+  title: string;
+  preview: string;
+  className: string;
+  id: number
+};
 
-type ChatPreviewProps={
-  title:string, 
-  preview:string,
-  className:string
-}
-
-const ChatPreview = ({title,preview,className}:ChatPreviewProps) => {
+const ChatPreview = ({ title, preview, className, id }: ChatPreviewProps) => {
+  const deleteChat= UseChatStore((s)=>s.deleteChat)
   return (
-    <div className={`mt-8 rounded-xl ${className}`}>
+    <div className={`mt-8 p-4 rounded-xl flex justify-between ${className}`}>
+      <div>
         <h4>{title}</h4>
         <p>{preview}</p>
+      </div>
+      <p className="cursor-pointer" onClick={()=>deleteChat(id)}>🗑️</p>
     </div>
-  )
-}
+  );
+};
 
-export default ChatPreview
+export default ChatPreview;
