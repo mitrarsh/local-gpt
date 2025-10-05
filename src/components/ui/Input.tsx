@@ -67,7 +67,7 @@ const Input = () => {
         value={input}
       />
       <button type="submit">
-        <img src="assets/icons/send.svg" alt="" />
+        <img src="/assets/icons/send.svg" alt="" />
       </button>
     </form>
   );
