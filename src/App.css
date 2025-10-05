@@ -98,9 +98,7 @@ p {
   h4 {
     font-size: 1rem;
   }
-  body {
-    font-size: 1rem;
-  }
+
   h1,
   h2,
   h3,
@@ -111,6 +109,8 @@ p {
 /*  global classes */
 .chatbox{
   position: relative;
+  width: clamp(60rem, 90vw, 50%);
+  margin: 0 auto;
 }
 .input{
     background-color: var(--clr-gray-1);
@@ -120,7 +120,7 @@ p {
      bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
+      width: clamp(60rem, 90vw, 50%);
 
   
 }
@@ -130,9 +130,11 @@ p {
   padding: 1rem 1.5rem;
   margin-top: 2rem;
   width: fit-content;
+  max-width: 80%;       
+  word-wrap: break-word; 
 }
 .chatgptMsg{
-
+background-color: aqua;
 }
 .humanMsg{
   background-color: var(--clr-gray-1);
@@ -141,5 +143,7 @@ p {
 .messagesBox{
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  padding-bottom: 8rem;
 }
 /* section */
