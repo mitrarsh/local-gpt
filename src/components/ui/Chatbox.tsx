@@ -6,7 +6,7 @@ import MessagesBox from "./MessagesBox";
 const Chatbox = () => {
   const chatHistory = UseChatStore((state) => state.chatHistory);
   return (
-    <div className="chatbox w-[10rem]">
+    <div className="chatbox">
       <MessagesBox>
         {chatHistory.map((msg) =>
           msg.user === "chatgpt" ? (

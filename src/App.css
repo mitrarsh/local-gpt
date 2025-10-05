@@ -80,6 +80,7 @@ h3 {
 }
 h4 {
   font-size: 0.875rem;
+  color: var(--clr-primary-1);
 }
 p {
   margin-bottom: 1.25rem;
@@ -106,23 +107,39 @@ p {
     line-height: 1;
   }
 }
+/* me-made classes */
+.mt-8{
+  margin-top: 2rem;
+}
 /*  global classes */
 .chatbox{
+  display: flex;
+  flex-direction: column;
   position: relative;
-  width: clamp(60rem, 90vw, 50%);
+  width: clamp(50rem, 90vw, 100%);
   margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
+  padding: 2rem 0;
 }
 .input{
     background-color: var(--clr-gray-1);
     border-radius: var(--radius);
     padding: 2rem;
-    position: fixed;
-     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-      width: clamp(60rem, 90vw, 50%);
-
-  
+      width: clamp(50rem, 90vw, 80%);
+      align-self: center;
+}
+.messagesBox{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+@media screen and (min-width: 800px) {
+  .messagesBox{
+    padding: 0 10rem;
+  }
 }
 .msg{
   padding: 2rem;
@@ -140,10 +157,10 @@ background-color: aqua;
   background-color: var(--clr-gray-1);
   align-self: end;
 }
-.messagesBox{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding-bottom: 8rem;
-}
+
 /* section */
+
+.sidebar{
+  padding: 2rem;
+  border: 1px solid var(--clr-gray-2);
+}
